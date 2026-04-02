@@ -1,159 +1,345 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events | Tsukuba Portal for Byzantine Studies</title>
-    <style>
-        :root {
-            --bg-color: #f4f6f9;
-            --text-color: #333333;
-            --sub-text: #666666;
-            --btn-bg: #ffffff;
-            --btn-text: #2c3e50;
-            --btn-hover: #e2e8f0;
-            --accent-color: #4a90e2; /* リンクテキスト用のアクセントカラー */
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 2rem 1rem;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        .name {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .subtitle {
-            font-size: 0.9rem;
-            color: var(--sub-text);
-            margin-bottom: 1.5rem;
-        }
-
-        .content-card {
-            text-align: left;
-            background-color: var(--btn-bg);
-            padding: 1.5rem 1.2rem;
-            border-radius: 16px;
-            margin: 0 0 2rem 0;
-            border: 1px solid #eaeaea;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            font-size: 0.95rem;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .content-card h2 {
-            font-size: 1.1rem;
-            margin-bottom: 0.8rem;
-            border-bottom: 1px solid #eaeaea;
-            padding-bottom: 0.4rem;
-        }
-
-        .content-card p {
-            margin-bottom: 1rem;
-        }
-        
-        /* 箇条書きリストのスタイル */
-        .content-card ul {
-            margin-left: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .content-card li {
-            margin-bottom: 0.5rem;
-        }
-
-        .content-card a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        .content-card a:hover {
-            text-decoration: underline;
-        }
-
-        .link-btn {
-            display: inline-block;
-            background-color: var(--btn-bg);
-            color: var(--btn-text);
-            text-decoration: none;
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border: 1px solid #eaeaea;
-        }
-
-        .link-btn:hover {
-            background-color: var(--btn-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
-
-        footer {
-            margin-top: 3rem;
-            font-size: 0.75rem;
-            color: #999;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | Tsukuba Portal for Byzantine Studies</title>
+  <style>
+    :root {
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #d1d5db;
+      --bg: #ffffff;
+      --card: #f8fafc;
+      --accent: #1d4ed8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+    h2 {
+      margin-top: 2.25rem;
+      margin-bottom: 0.85rem;
+      font-size: 1.4rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.35rem;
+    }
+    h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.15rem;
+      line-height: 1.35;
+    }
+    p { margin: 0 0 1rem; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    .lead {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .event-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1rem 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .meta {
+      display: grid;
+      grid-template-columns: 6.5rem 1fr;
+      gap: 0.2rem 0.8rem;
+      margin: 0.75rem 0 1rem;
+      font-size: 0.96rem;
+    }
+    .meta dt {
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .meta dd {
+      margin: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.5rem;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.7rem 0.75rem;
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: #f3f4f6;
+      font-weight: 700;
+    }
+    .time {
+      white-space: nowrap;
+      width: 11rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .speaker {
+      width: 8.5rem;
+      white-space: nowrap;
+    }
+    .foot {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 0.25rem;
+    }
+    @media (max-width: 720px) {
+      .meta {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+      }
+      .time, .speaker {
+        white-space: normal;
+        width: auto;
+      }
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+      tr {
+        margin-bottom: 0.8rem;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+        background: #fff;
+      }
+      td {
+        border: none;
+        border-bottom: 1px solid var(--border);
+      }
+      td:last-child {
+        border-bottom: none;
+      }
+      td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.86rem;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 0.15rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <main class="container">
+    <h1>Events</h1>
+    <p class="lead">Research meetings and related events of the Tsukuba Portal for Byzantine Studies.</p>
 
-    <div class="container">
-        <header>
-            <h1 class="name">Events</h1>
-            <p class="subtitle">Events related to Byzantine Studeis</p>
-        </header>
+    <h2>研究会</h2>
 
-        <main>
-            <div class="content-card">
-                <h2>研究会</h2>
-                <p>
-                    Detail
-                </p>
-                <ul>
-                    <li>発表タイトル (2024) - <a href="#">Slide</a></li>
-                </ul>
-            </div>
-             <div class="content-card">
-                <h2>研究会</h2>
-                <p>
-                    Detail
-                </p>
-                <ul>
-                    <li>発表タイトル (2024) - <a href="#">Slide</a></li>
-                </ul>
-            </div>
+    <section class="event-card">
+      <h3>第3回後期ビザンツ研究会</h3>
+      <dl class="meta">
+        <dt>Date</dt>
+        <dd>23 November 2025 (Sun)</dd>
+        <dt>Venue</dt>
+        <dd>筑波大学東京キャンパス（321講義室）</dd>
+        <dt>Access</dt>
+        <dd><a href="https://www.office.otsuka.tsukuba.ac.jp/location/" target="_blank" rel="noopener noreferrer">https://www.office.otsuka.tsukuba.ac.jp/location/</a></dd>
+      </dl>
 
-            <a href="index.html" class="link-btn">← Back to Home</a>
-        </main>
+      <table aria-label="Program for the third Late Byzantine Studies Workshop">
+        <thead>
+          <tr>
+            <th class="time">Time</th>
+            <th class="speaker">Speaker</th>
+            <th>Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="time" data-label="Time">13:30–14:10</td>
+            <td class="speaker" data-label="Speaker">石川知明</td>
+            <td data-label="Title">「転換期のメサゾン職権と外政家ディミトリオス・キドニス（仮）」</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">14:10–14:50</td>
+            <td class="speaker" data-label="Speaker">岩崎武瑠</td>
+            <td data-label="Title">「後期ビザンツ諸政権の「ウチ」と「ヨソ」について─トレビゾンド皇帝ヨハネス2世とアレクシオス2世を中心に─」</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">14:50–15:00</td>
+            <td class="speaker" data-label="Speaker">—</td>
+            <td data-label="Title">休憩</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">15:00–15:40</td>
+            <td class="speaker" data-label="Speaker">高柳椋</td>
+            <td data-label="Title">「ビザンツの鉱山を〈問う〉――封鉛・貨幣・顔料を対象として――」</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">15:40–16:20</td>
+            <td class="speaker" data-label="Speaker">平野智洋</td>
+            <td data-label="Title">「ビザンツ有力者ヅァンブラコン家の系譜とプロソポグラフィー―パレオロゴス家、ラウル家との関係」</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">16:20–17:00</td>
+            <td class="speaker" data-label="Speaker">村田光司</td>
+            <td data-label="Title">「ラコニア地方聖堂群における献堂銘文とそのコンテクスト」</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">17:00–19:00</td>
+            <td class="speaker" data-label="Speaker">—</td>
+            <td data-label="Title">情報交換会</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-        <footer>
-            &copy; 2026 Tsukuba Portal for Byzantine Studies
-        </footer>
-    </div>
+    <section class="event-card">
+      <h3>第2回後期ビザンツ研究会</h3>
+      <dl class="meta">
+        <dt>Date</dt>
+        <dd>23 November 2024 (Sat)</dd>
+        <dt>Venue</dt>
+        <dd>筑波大学東京キャンパス（321講義室）</dd>
+        <dt>Access</dt>
+        <dd><a href="https://www.office.otsuka.tsukuba.ac.jp/location/" target="_blank" rel="noopener noreferrer">https://www.office.otsuka.tsukuba.ac.jp/location/</a></dd>
+      </dl>
 
+      <table aria-label="Program for the second Late Byzantine Studies Workshop">
+        <thead>
+          <tr>
+            <th class="time">Time</th>
+            <th class="speaker">Speaker</th>
+            <th>Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="time" data-label="Time">13:30–14:10</td>
+            <td class="speaker" data-label="Speaker">高柳椋</td>
+            <td data-label="Title">「ヨハネス２世大コムネノスの銀貨の成分分析の結果と比較」</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">14:10–14:50</td>
+            <td class="speaker" data-label="Speaker">岩崎武瑠</td>
+            <td data-label="Title">「スカンタリオスの子アレクシオス皇子の呼称問題について」<br>「トレビゾンドの城塞レオントカストロンの現在と観測できる場所について」</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">14:50–15:00</td>
+            <td class="speaker" data-label="Speaker">—</td>
+            <td data-label="Title">休憩</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">15:00–15:40</td>
+            <td class="speaker" data-label="Speaker">村田光司</td>
+            <td data-label="Title">「後期ビザンツ世界における天文現象の記述とその文化的意義」</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">15:40–16:20</td>
+            <td class="speaker" data-label="Speaker">石川知明</td>
+            <td data-label="Title">「パレオロゴス朝末期におけるメサゾンの２人体制について」</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">16:20–17:00</td>
+            <td class="speaker" data-label="Speaker">平野智洋</td>
+            <td data-label="Title">「パナレトス『トラペズスの諸皇帝について』に於ける官職・爵位記載について」</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">17:00–18:00</td>
+            <td class="speaker" data-label="Speaker">—</td>
+            <td data-label="Title">情報交換会</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="event-card">
+      <h3>第1回トレビゾンド研究会</h3>
+      <dl class="meta">
+        <dt>Date</dt>
+        <dd>3 November 2023 (Fri, public holiday)</dd>
+        <dt>Venue</dt>
+        <dd>筑波大学東京キャンパス（322ゼミ室）</dd>
+        <dt>Access</dt>
+        <dd><a href="https://www.office.otsuka.tsukuba.ac.jp/location/" target="_blank" rel="noopener noreferrer">https://www.office.otsuka.tsukuba.ac.jp/location/</a></dd>
+      </dl>
+
+      <table aria-label="Program for the first Trebizond Workshop">
+        <thead>
+          <tr>
+            <th class="time">Time</th>
+            <th class="speaker">Speaker</th>
+            <th>Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="time" data-label="Time">14:00–14:40</td>
+            <td class="speaker" data-label="Speaker">高柳椋</td>
+            <td data-label="Title">「トルコ・ギュムシュハーネ県スレイマニエにおける鉱山集落の外観と教会遺跡の現状」</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">14:40–15:20</td>
+            <td class="speaker" data-label="Speaker">岩崎武瑠</td>
+            <td data-label="Title">「アクチャアバットの聖ミカエル教会の修復状況について」</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">15:20–15:30</td>
+            <td class="speaker" data-label="Speaker">—</td>
+            <td data-label="Title">休憩</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">15:30–16:10</td>
+            <td class="speaker" data-label="Speaker">村田光司</td>
+            <td data-label="Title">「１４世紀トレビゾンドで観測された日食記事について」</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">16:10–16:50</td>
+            <td class="speaker" data-label="Speaker">平野智洋</td>
+            <td data-label="Title">「ミハイル・パナレトス『トラペズスの諸帝について』翻訳作業と、トレビゾンド・後期ビザンツ史関連文献調査の現況」</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="Time">16:50–17:30</td>
+            <td class="speaker" data-label="Speaker">—</td>
+            <td data-label="Title">情報交換会</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <p class="foot">
+      <a class="back-link" href="index.html">← Back to Home</a><br>
+      © 2026 Tsukuba Portal for Byzantine Studies
+    </p>
+  </main>
 </body>
 </html>
