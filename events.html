@@ -12,6 +12,9 @@
       --bg: #f8fafc;
       --card: #ffffff;
       --accent: #1d4ed8;
+      --btn-bg: #ffffff;
+      --btn-text: #2c3e50;
+      --btn-hover: #e2e8f0;
     }
     * { box-sizing: border-box; }
     body {
@@ -101,36 +104,37 @@
       width: 8.5rem;
       white-space: nowrap;
     }
+    
+    /* フッター部分の修正（中央揃え） */
     .foot {
-      margin-top: 2rem;
-      padding-top: 1rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
       border-top: 1px solid var(--border);
       font-size: 0.95rem;
       color: var(--muted);
+      text-align: center; /* ここで全体を中央揃えにしています */
     }
-    .back-link {
-      display: inline-block;
-      margin-top: 0.25rem;
-    }
+    
     .link-btn {
-            display: inline-block;
-            background-color: var(--btn-bg);
-            color: var(--btn-text);
-            text-decoration: none;
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border: 1px solid #eaeaea;
-        }
-
-        .link-btn:hover {
-            background-color: var(--btn-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
+      display: inline-block;
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      border: 1px solid #eaeaea;
+      margin-bottom: 1.5rem; /* ボタンの下に余白を追加 */
+    }
+    .link-btn:hover {
+      background-color: var(--btn-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    
     @media (max-width: 720px) {
       .meta {
         grid-template-columns: 1fr;
@@ -205,7 +209,6 @@
             <td data-label="Title">「後期ビザンツ諸政権の「ウチ」と「ヨソ」について─トレビゾンド皇帝ヨハネス2世とアレクシオス2世を中心に─」</td>
           </tr>
           <tr>
-
             <td class="speaker" data-label="Speaker">高柳椋</td>
             <td data-label="Title">「ビザンツの鉱山を〈問う〉――封鉛・貨幣・顔料を対象として――」</td>
           </tr>
@@ -224,7 +227,7 @@
     <section class="event-card">
       <h3>2024 November 23 || 第2回後期ビザンツ研究会（The 2nd Late Byzantine Studies Workshop）</h3>
       <dl class="meta">
-             <dt>Venue</dt>
+        <dt>Venue</dt>
         <dd>University of Tsukuba, Tokyo Campus</dd>
       </dl>
 
@@ -263,7 +266,7 @@
     <section class="event-card">
       <h3>2023 November 3 || 第1回後期ビザンツ研究会（The 1st Late Byzantine Studies Workshop）</h3>
       <dl class="meta">
-               <dt>Venue</dt>
+        <dt>Venue</dt>
         <dd>University of Tsukuba, Tokyo Campus</dd>
       </dl>
 
@@ -295,11 +298,10 @@
       </table>
     </section>
 
-    <p class="foot">
+    <div class="foot">
       <a class="link-btn" href="index.html">← Back to Home</a><br>
-      © 2026 Tsukuba Portal for Byzantine Studies
-    </p>
+      <span>© 2026 Tsukuba Portal for Byzantine Studies</span>
+    </div>
   </main>
 </body>
 </html>
-
