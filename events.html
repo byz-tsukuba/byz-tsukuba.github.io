@@ -112,6 +112,25 @@
       display: inline-block;
       margin-top: 0.25rem;
     }
+    .link-btn {
+            display: inline-block;
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #eaeaea;
+        }
+
+        .link-btn:hover {
+            background-color: var(--btn-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
     @media (max-width: 720px) {
       .meta {
         grid-template-columns: 1fr;
@@ -277,7 +296,7 @@
     </section>
 
     <p class="foot">
-      <a class="back-link" href="index.html">← Back to Home</a><br>
+      <a class="link-btn" href="index.html">← Back to Home</a><br>
       © 2026 Tsukuba Portal for Byzantine Studies
     </p>
   </main>
