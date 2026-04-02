@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People | Tsukuba Portal for Byzantine Studies</title>
+    <style>
+        :root {
+            --bg-color: #f4f6f9;
+            --text-color: #333333;
+            --sub-text: #666666;
+            --btn-bg: #ffffff;
+            --btn-text: #2c3e50;
+            --btn-hover: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        .member-list {
+            text-align: left;
+            background-color: var(--btn-bg);
+            padding: 1.2rem;
+            border-radius: 16px;
+            margin: 0 0 2rem 0;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .member-item {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            margin-bottom: 1.5rem; /* 間隔を少し広げて見やすく調整 */
+            line-height: 1.4;
+        }
+
+        .member-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .dept {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--sub-text);
+            margin-top: 0.2rem;
+        }
+
+        .link-btn {
+            display: inline-block;
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #eaeaea;
+        }
+
+        .link-btn:hover {
+            background-color: var(--btn-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.75rem;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1 class="name">People</h1>
+        </header>
+
+        <main>
+            <div class="member-list">
+                <p class="member-item">
+                    <strong>koji Murata</strong>
+                    <span class="dept">Byzantine History</span>
+                    <span class="dept">Faculty of Library, Information and Media Science, University of Tsukuba</span>
+                    <span class="dept">Email: </span>
+                </p>
+                <p class="member-item">
+                    <strong>Kazufumi Takeda</strong>
+                    <span class="dept">Byzantine Art History</span>
+                    <span class="dept">Faculty of Art and Design, University of Tsukuba</span>
+                    <span class="dept">Email: </span>
+                </p>
+                <p class="member-item">
+                    <strong>Ryo Takayanagi</strong>
+                    <span class="dept">Byaantine Archeology</span>
+                    <span class="dept">Master's Program Student, Graduate School of Business Sciences, Humanities and Social Sciences, University of Tsukuba</span>
+                    <span class="dept">Email: s2520018@u.tsukuba.ac.jp</span>
+                </p>
+            </div>
+
+            <a href="index.html" class="link-btn">← Back to Home</a>
+        </main>
+
+        <footer>
+            &copy; 2026 Tsukuba Portal for Byzantine Studies
+        </footer>
+    </div>
+
+</body>
+</html>
