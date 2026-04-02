@@ -42,32 +42,32 @@
             margin-bottom: 1.5rem;
         }
 
+        /* リスト全体の設定（カード間の余白を管理） */
         .member-list {
             text-align: left;
-            background-color: var(--btn-bg);
-            padding: 1.2rem;
-            border-radius: 16px;
             margin: 0 0 2rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem; /* 個人枠の間のスペース */
+        }
+
+        /* 個人ごとの枠（カード）の設定 */
+        .member-item {
+            background-color: var(--btn-bg);
+            padding: 1.5rem 1.2rem;
+            border-radius: 16px;
             border: 1px solid #eaeaea;
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .member-item {
             font-size: 0.95rem;
             color: var(--text-color);
-            margin-bottom: 1.5rem; /* 間隔を少し広げて見やすく調整 */
             line-height: 1.4;
-        }
-
-        .member-item:last-child {
-            margin-bottom: 0;
         }
 
         .dept {
             display: block;
             font-size: 0.8rem;
             color: var(--sub-text);
-            margin-top: 0.2rem;
+            margin-top: 0.4rem;
         }
 
         .link-btn {
@@ -106,24 +106,26 @@
 
         <main>
             <div class="member-list">
-                <p class="member-item">
+                <div class="member-item">
                     <strong>koji Murata</strong>
                     <span class="dept">Byzantine History</span>
                     <span class="dept">Faculty of Library, Information and Media Science, University of Tsukuba</span>
                     <span class="dept">Email: </span>
-                </p>
-                <p class="member-item">
+                </div>
+                
+                <div class="member-item">
                     <strong>Kazufumi Takeda</strong>
                     <span class="dept">Byzantine Art History</span>
                     <span class="dept">Faculty of Art and Design, University of Tsukuba</span>
                     <span class="dept">Email: </span>
-                </p>
-                <p class="member-item">
+                </div>
+                
+                <div class="member-item">
                     <strong>Ryo Takayanagi</strong>
-                    <span class="dept">Byaantine Archeology</span>
+                    <span class="dept">Byzantine Archeology</span>
                     <span class="dept">Master's Program Student, Graduate School of Business Sciences, Humanities and Social Sciences, University of Tsukuba</span>
                     <span class="dept">Email: s2520018@u.tsukuba.ac.jp</span>
-                </p>
+                </div>
             </div>
 
             <a href="index.html" class="link-btn">← Back to Home</a>
